@@ -11,6 +11,10 @@ This folder contains some useful background material to facilitate the use of IR
 * [990-PF](https://github.com/lecy/Open-Data-for-Nonprofit-Research/blob/master/Resources/Form%20990-PF%202015.pdf)
 * [990-N Postcard](https://github.com/lecy/Open-Data-for-Nonprofit-Research/blob/master/Resources/Information%20Needed%20to%20File%20e-Postcard.pdf)
 
+*These examples represent the 2016 versions of the Form 990.*
+
+You can find previous versions of the 990 forms [HERE](https://apps.irs.gov/app/picklist/list/priorFormPublication.html;jsessionid=mV+XU5sTBU3CpbIhdbcxrw__?resultsPerPage=200&sortColumn=sortOrder&indexOfFirstRow=0&criteria=formNumber&value=990&isDescending=false).
+
 
 
 ## Liberating the 990 E-Filer Data
