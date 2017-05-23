@@ -13,7 +13,7 @@ This folder contains some useful background material to facilitate the use of IR
 
 *These examples represent the 2016 versions of the Form 990. You can find previous versions of the 990 forms [HERE](https://apps.irs.gov/app/picklist/list/priorFormPublication.html;jsessionid=mV+XU5sTBU3CpbIhdbcxrw__?resultsPerPage=200&sortColumn=sortOrder&indexOfFirstRow=0&criteria=formNumber&value=990&isDescending=false).*
 
-
+*For a list of Schedules and Instructions go [HERE](https://www.irs.gov/uac/current-form-990-series-forms-and-instructions).*
 
 ## Liberating the 990 E-Filer Data
 
