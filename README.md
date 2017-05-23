@@ -36,12 +36,13 @@ The Master Concordance
 
 ## Documentation
 
-k
+E-filer documentation
 
 ## Resources
 
-
+Background material to help you work with IRS 990 Forms.
 
 ## Build Scripts
 
+Scripts in R and Python used for converting data from the XML format to relational databases.
 
