@@ -5,7 +5,7 @@ The IRS has released all nonprofit 990 tax data that has been e-filed through th
 
 The data has been posted as XML files in an [Amazon Web Server (AWS) Cloud Server](https://aws.amazon.com/public-datasets/irs-990/). 
 
-For more details about 990 data and the push to have the IRS make it public see the "RESOURCES" folder. 
+For more details about 990 data and the push to have the IRS make it public see the "990_BACKGROUND" folder. 
 
 
 ## Conversion from XML
@@ -30,7 +30,7 @@ The Master Concordance file...explanation of importance and use.
 
 ## E-Filer Documentation
 
-Technical IRS documentation on the architecture and versioning of e-filer forms, including XSD and schema files, and change logs.
+The EFILER_DOCUMENATION folder contains technical IRS documentation on the architecture and versioning of e-filer forms, including XSD and schema files, and change logs.
 
 This folder also contains scripts for generating useful meta-data related to e-filer forms, xpath directories, and e-filer submission patterns. 
 
