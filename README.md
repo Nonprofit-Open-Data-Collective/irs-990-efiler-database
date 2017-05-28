@@ -21,7 +21,7 @@ This repository is organized as follows:
 
 
 
-## The Master Concordance
+## The Master Concordance File
 
 Most of the work represented in this repository has been done to create the "MASTER-CONCORDENCE.csv" file. This file contains all of the important information needed to make the E-Filer XML files usable.
 
