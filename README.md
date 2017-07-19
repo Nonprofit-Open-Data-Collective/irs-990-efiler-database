@@ -1,3 +1,5 @@
+*Note, this project is in process of being migrated and extended from https://lecy.github.io/Open-Data-for-Nonprofit-Research/*.
+
 # IRS 990 E-Filer Data
 
 
