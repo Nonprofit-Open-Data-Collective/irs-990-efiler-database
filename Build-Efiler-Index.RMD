@@ -80,8 +80,9 @@ dat3 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2013.json")[[1]]
 dat4 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2014.json")[[1]]
 dat5 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2015.json")[[1]]
 dat6 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2016.json")[[1]]
-	
-data.ef <- rbind( dat1, dat2, dat3, dat4, dat5, dat6 )
+dat7 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2017.json")[[1]]
+
+data.ef <- rbind( dat1, dat2, dat3, dat4, dat5, dat6, dat7 )
 
 
 nrow( data.ef )
@@ -108,12 +109,35 @@ data.ef$FilingYear[ month == "12" ] <- year[ month == "12" ]
 #   990EZ  15500  63253  82066  93769 104425 114822  60967
 #   990PF   2352  25275  34597  39936  45870  52617  34387
 
+```
 
+
+
+
+
+## DESCRIPTIVES
+
+
+```R
+
+length( unique( data.ef$EIN ) )  # number of unique orgs
+
+table( table( data.ef$EIN, useNA="ifany" ) )  # available panels
+
+
+
+# why do we have some organizations with more spells than years ?
+
+table.ein <- table( data.ef$EIN, useNA="ifany" )
+
+table.ein[ table.ein > 6 ]
+
+data.ef[ data.ef$EIN == "830229733" , ]  # submitted two filings in 2013 
 
 
 # DROP UNRELIABLE YEARS
 
-table( data.ef$FilingYear ) # note that some records are nonsensical
+table( data.ef$FilingYear ) # note that some records are from prior to efiling
 
 data.ef <- data.ef[ data.ef$FilingYear > 2009 & data.ef$FilingYear < 2017 , ]
 
@@ -131,33 +155,6 @@ table( data.ef$IsElectronic, data.ef$IsAvailable )
 data.ef <- data.ef[ data.ef$IsAvailable == TRUE , ]
 
 nrow( data.ef )
-
-
-```
-
-
-
-
-
-## DESCRIPTIVES
-
-
-```R
-
-length( unique( data.ef$EIN ) )  # number of unique orgs
-
-table( table( data.ef$EIN, useNA="ifany" ) )  # available panel spells
-
-
-
-# why do we have some organizations with more spells than years ?
-
-table.ein <- table( data.ef$EIN, useNA="ifany" )
-
-table.ein[ table.ein > 6 ]
-
-data.ef[ data.ef$EIN == "830229733" , ]  # submitted two filings in 2013 
-
 
 ```
 
