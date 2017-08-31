@@ -1,22 +1,5 @@
 *Note, this project is in process of being migrated and extended from https://lecy.github.io/Open-Data-for-Nonprofit-Research/*.
 
-# IRS 990 E-Filer Data
-
-
-The IRS has released all nonprofit 990 tax data that has been e-filed through their online system, approximately 60-65% of all 990-PC and 990-EZ filers. It is available for years 2012 to current years with a small set of returns avaialable for 2010 and 2011. 
-
-The data has been posted as XML files in an [Amazon Web Server (AWS) Cloud Server](https://aws.amazon.com/public-datasets/irs-990/). 
-
-For more details about 990 data and the push to have the IRS make it public see the "990_BACKGROUND" folder. 
-
-
-## Conversion from XML
-
-In order to support use of this data, we have created this repository as a guide to convert the XML files into a relational database that can be used for commercial or research purposes. This process has been a joint effort by Charity Navigator, Guidestar, The Urban Institute, The Aspen Institute, Boardsource, Syracuse University, Indiana University, Arizona State University, and numerous other actors. 
-
-
-
-
 # Organization of the Repository
 
 This repository is organized as follows:
@@ -25,9 +8,11 @@ This repository is organized as follows:
 
 ## The Master Concordance File
 
-Most of the work represented in this repository has been done to create the "MASTER-CONCORDENCE.csv" file. This file contains all of the important information needed to make the E-Filer XML files usable.
+Most of the work represented in this repository has been done to create the "MASTER-CONCORDANCE.csv" file. This file contains all of the important information needed to make the E-Filer XML files usable.
 
 The Master Concordance file...explanation of importance and use.
+
+First complete public version released Aug. 31, 2017. Fields are being validated and updated through an iterative process of build datasets using the MASTER CONCORDANCE file. It is names Version 0 (MASTER_CONCORDANCE_V0.csv) to indicate that some basic information (like field names) might change during this process. In other words, it is in the beta testing phase. 
 
 
 ## E-Filer Documentation
@@ -47,6 +32,25 @@ General background material on the IRS 990 Forms and the history of efforts to e
 ## Build Scripts
 
 Scripts in R and Python used for translating AWS XML e-filer returns to a unified relational databases.
+
+
+
+# IRS 990 E-Filer Data
+
+
+The IRS has released all nonprofit 990 tax data that has been e-filed through their online system, approximately 60-65% of all 990-PC and 990-EZ filers. It is available for years 2012 to current years with a small set of returns avaialable for 2010 and 2011. 
+
+The data has been posted as XML files in an [Amazon Web Server (AWS) Cloud Server](https://aws.amazon.com/public-datasets/irs-990/). 
+
+For more details about 990 data and the push to have the IRS make it public see the "990_BACKGROUND" folder. 
+
+
+## Conversion from XML
+
+In order to support use of this data, we have created this repository as a guide to convert the XML files into a relational database that can be used for commercial or research purposes. This process has been a joint effort by Charity Navigator, Guidestar, The Urban Institute, The Aspen Institute, Boardsource, Syracuse University, Indiana University, Arizona State University, and numerous other actors. 
+
+
+
 
 
 
