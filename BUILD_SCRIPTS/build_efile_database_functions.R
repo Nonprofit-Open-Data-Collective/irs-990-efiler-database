@@ -72,17 +72,6 @@ buildIndex <- function( file.years=2011:2018 )
 
         index <- bind_rows( index.list )
 
-	# dat1 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2011.json")[[1]]
-	# dat2 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2012.json")[[1]]
-	# dat3 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2013.json")[[1]]
-	# dat4 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2014.json")[[1]]
-	# dat5 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2015.json")[[1]]
-	# dat6 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2016.json")[[1]]
-	# dat7 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2017.json")[[1]]
-	# dat8 <- fromJSON("https://s3.amazonaws.com/irs-form-990/index_2018.json")[[1]]
-
-	# index <- rbind( dat1, dat2, dat3, dat4, dat5, dat6, dat7, dat8  )
-
         index <- unique( index )  # remove a couple of strange duplicates
 
 	# REFORMAT DATE FROM YYYY-MM TO YYYY
@@ -123,7 +112,7 @@ buildIndex <- function( file.years=2011:2018 )
 #
 # find_group_names() identifies all possible roots
 # get_var_map() creates a crosswalk between IRS 
-#   variable names and concordance variable names
+#    variable names and concordance variable names
 # get_table() build the data table
 # re_name() converts IRS names to concordance names
 
