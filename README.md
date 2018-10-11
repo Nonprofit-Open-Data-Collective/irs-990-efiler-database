@@ -72,15 +72,65 @@ list here...
 
 # Available Data
 
-E-Filing began in 2010, but some data has been filed retroactively. There has been a steady increase in e-filers each year. This table represents the approximate number of returns available in the AWS files (as of March 2017):
+E-Filing began in 2010, but some data has been filed retroactively. There has been a steady increase in e-filers each year. This table represents the approximate number of returns available in the AWS files (as of Oct 2018):
 
- **FORM** | 2009 |  2010 |  2011  | 2012  | 2013  | 2014 |  2015
--------|-------|--------|-------|-------|------|-------|------- 
-**990**  | 33,360 | 123,107 | 159,539 | 179,675 | 198,615 | 215,764 | 73,233
-**990EZ** | 15,500 | 63.253 |  82,066 |  93,769 | 104,425  | 114,822  | 60,967
-**990PF**  | 2,352 | 25,275  | 34,597  | 39,936 | 45,870  | 52,617  | 34,387
+|      |  2009|   2010|   2011|   2012|   2013|   2014|   2015|   2016|  2017|
+|:-----|-----:|------:|------:|------:|------:|------:|------:|------:|-----:|
+|990   | 33,360| 123,107| 159,539| 179,674| 198,738| 218,614| 232,975| 214,585| 25,921|
+|990EZ | 15,500|  63,253|  82,066|  93,769| 104,538| 116,461| 124,507| 121,530| 28,767|
+|990PF |  2,352|  25,275|  34,597|  39,936|  45,897|  53,443|  58,724|  60,305| 20,608|
+
 
 Nonprofits can submit 990 filings throughout the year. The IRS releases new data each month based upon recent returns. You can generate the Index file of all current and available e-filer returns using [this script](https://github.com/Nonprofit-Open-Data-Collective/irs-990-efiler-database/blob/master/Build-Efiler-Index.RMD).
+
+Get the most recent statistics:
+
+```r
+###---------------------------------------------------
+###   BUILD INDEX
+###---------------------------------------------------
+
+
+buildIndex <- function( file.years=2011:2018 )
+{
+
+	library( jsonlite )
+	library( R.utils )
+	library( dplyr )
+	
+	index.list <- list()
+	counter <- 1
+	
+	for( i in file.years )
+	{
+	  
+	  index.url <- paste0( "https://s3.amazonaws.com/irs-form-990/index_", i, ".json" )
+	  index.list[[ counter ]] <- fromJSON( index.url )[[1]]
+	  counter <- counter + 1
+	  
+	}
+
+        index <- bind_rows( index.list )
+
+        index <- unique( index )  # remove a couple of strange duplicates
+
+	# REFORMAT DATE FROM YYYY-MM TO YYYY
+	# Tax Period represents the end of the nonprofit's accounting year
+	# The tax filing year is always the previous year, unless the accounting year ends in December
+	
+        tax.year <- as.numeric( substr( index$TaxPeriod, 1, 4 ) )
+	month <- substr( index$TaxPeriod, 5, 6 )
+	index$TaxYear <- tax.year - 1
+	index$TaxYear[ month == "12" ] <- tax.year[ month == "12" ]
+	
+
+	return( index )
+
+}
+
+d <- buildIndex()
+table( d$FormType, d$TaxYear )
+```
 
 
 
