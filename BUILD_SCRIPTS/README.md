@@ -227,6 +227,26 @@ dd <- bind_rows( list.of.tables )
 ```
 
 
+Alternatively, this approach might work better when the tables are complex, for example when the variables are not all on the same level:
+
+```
+url <- "https://s3.amazonaws.com/irs-form-990/201123149349301147_public.xml"
+doc <- read_xml( url )
+xml_ns_strip( doc )
+
+doc <- xmlParse( doc )
+a <- xmlToList(doc)
+str( a )
+
+# table on functional expenses
+a[["ReturnData"]][["IRS990"]][["TotalFunctionalExpenses"]]
+
+# program service accomplishments for activity 3
+a[["ReturnData"]][["IRS990"]][["Activity3"]]
+
+dd <- jsonlite::toJSON(a, pretty=TRUE)
+
+```
 
 
 # BUILD FULL DATABASE
