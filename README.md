@@ -72,13 +72,13 @@ list here...
 
 # Available Data
 
-E-Filing began in 2010, but some data has been filed retroactively. There has been a steady increase in e-filers each year. This table represents the approximate number of returns available in the AWS files (as of Oct 2018):
+E-Filing began in 2010, but some data has been filed retroactively. There has been a steady increase in e-filers each year. This table represents the approximate number of returns available in the AWS files (as of Dec 2019):
 
-|      |  2009|   2010|   2011|   2012|   2013|   2014|   2015|   2016|  2017|
-|:-----|-----:|------:|------:|------:|------:|------:|------:|------:|-----:|
-|990   | 33,360| 123,107| 159,539| 179,674| 198,738| 218,614| 232,975| 214,585| 25,921|
-|990EZ | 15,500|  63,253|  82,066|  93,769| 104,538| 116,461| 124,507| 121,530| 28,767|
-|990PF |  2,352|  25,275|  34,597|  39,936|  45,897|  53,443|  58,724|  60,305| 20,608|
+|      |  2009|   2010|   2011|   2012|   2013|   2014|   2015|   2016|   2017|
+|:-----|-----:|------:|------:|------:|------:|------:|------:|------:|------:|
+|990   | 33360| 123107| 159539| 179674| 198738| 218614| 233431| 242093| 122730|
+|990EZ | 15500|  63253|  82066|  93769| 104538| 116461| 124869| 128950|  87746|
+|990PF |  2352|  25275|  34597|  39936|  45897|  53443|  58802|  62606|  48305|
 
 
 Nonprofits can submit 990 filings throughout the year. The IRS releases new data each month based upon recent returns. You can generate the Index file of all current and available e-filer returns using [this script](https://github.com/Nonprofit-Open-Data-Collective/irs-990-efiler-database/blob/master/Build-Efiler-Index.RMD).
@@ -131,6 +131,12 @@ buildIndex <- function( file.years=2011:2018 )
 d <- buildIndex()
 table( d$FormType, d$TaxYear )
 ```
+
+|      |  2009|   2010|   2011|   2012|   2013|   2014|   2015|   2016|   2017|
+|:-----|-----:|------:|------:|------:|------:|------:|------:|------:|------:|
+|990   | 33360| 123107| 159539| 179674| 198738| 218614| 233431| 242093| 122730|
+|990EZ | 15500|  63253|  82066|  93769| 104538| 116461| 124869| 128950|  87746|
+|990PF |  2352|  25275|  34597|  39936|  45897|  53443|  58802|  62606|  48305|
 
 
 
