@@ -142,4 +142,4 @@ table( d$FormType, d$TaxYear )
 
 # License Info
 
-list open source license info here
+GNU General Public License v2.0
