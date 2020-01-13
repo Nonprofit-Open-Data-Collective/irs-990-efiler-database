@@ -4,20 +4,20 @@ This script builds the INDEX file for all IRS E-Filer data provided on the Amazo
 
 ## DATA DICTIONARY
 
-Variable | Notes
----------|---------
-EIN | Employer Identification Number
-SubmittedOn | ? Unclear
-TaxPeriod | Tax year and month of the filing YYYYMM
-FilingYear | Tax year of the filing YYYY
-DLN | Document Locator Number - internal to IRS
-LastUpdated | Last time the org updated their file
-FormType | 990, 990-EZ, or 990-PF
-ObjectId | Unique ID - Tax Period + DLN (sortof)
-OrganizationName | Name of the nonprofit
-IsElectronic | Was the return filed electronically? T/F
-IsAvailable | Is the return available online? T/F
-URL | Web address of the IRS electronic return
+| Variable | Notes 
+| ---------|--------- 
+| EIN | Employer Identification Number 
+| SubmittedOn | ? Unclear 
+| TaxPeriod | Tax year and month of the filing YYYYMM 
+| FilingYear | Tax year of the filing YYYY 
+| DLN | Document Locator Number - internal to IRS 
+| LastUpdated | Last time the org updated their file 
+| FormType | 990, 990-EZ, or 990-PF 
+| ObjectId | Unique ID - Tax Period + DLN (sortof) 
+| OrganizationName | Name of the nonprofit 
+| IsElectronic | Was the return filed electronically? T/F 
+| IsAvailable | Is the return available online? T/F 
+| URL | Web address of the IRS electronic return 
 
 
 
