@@ -1,9 +1,9 @@
-*Note, this project is in process of being migrated and extended from https://lecy.github.io/Open-Data-for-Nonprofit-Research/*.
+**NOTE: THIS PROJECT HAS BEEN MOVED TO: https://github.com/Nonprofit-Open-Data-Collective/irs990efile**
+
+Check there for updated code and working examples. Pre-built data files will be available via the National Center for Charitable Statistics (NCCS) in spring 2023. 
+
 
 # Organization of the Repository
-
-This repository is organized as follows:
-
 
 
 ## The Master Concordance File
